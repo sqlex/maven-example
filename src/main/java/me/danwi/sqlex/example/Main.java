@@ -1,6 +1,7 @@
 package me.danwi.sqlex.example;
 
-import me.danwi.sqlex.core.DatabaseManager;
+import me.danwi.sqlex.core.DataSource;
+import me.danwi.sqlex.core.DataSourceManager;
 import me.danwi.sqlex.example.dao.RoleDao;
 import me.danwi.sqlex.example.dao.UserDao;
 
@@ -8,9 +9,11 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        DatabaseManager databaseManager = new DatabaseManager();
-        UserDao userDao = databaseManager.getInstance(UserDao.class);
-        RoleDao roleDao = databaseManager.getInstance(RoleDao.class);
+        final DataSourceManager manager = new DataSourceManager();
+        final DataSource<Repository> dataSource = manager.getInstance(Repository.class);
+
+        UserDao userDao = dataSource.getInstance(UserDao.class);
+        RoleDao roleDao = dataSource.getInstance(RoleDao.class);
 
         userDao.getAll(10, "123", null);
         userDao.getAll(10, "123", new ArrayList());
