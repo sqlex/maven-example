@@ -10,10 +10,10 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         final DataSourceManager manager = new DataSourceManager();
-        final DataSource<Repository> ds = manager.getInstance(Repository.class);
+        final DataSource<Repository> dataSource = manager.getInstance(Repository.class);
 
-        UserDao userDao = ds.getInstance(UserDao.class);
-        RoleDao roleDao = ds.getInstance(RoleDao.class);
+        UserDao userDao = dataSource.getInstance(UserDao.class);
+        RoleDao roleDao = dataSource.getInstance(RoleDao.class);
 
         userDao.getAll(10, "123", null);
         userDao.getAll(10, "123", new ArrayList());
