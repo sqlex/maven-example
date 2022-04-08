@@ -22,6 +22,15 @@
     </dependencies>
 
     <build>
+        <resources>
+            <resource>
+                <directory>${basedir}/src/main/java</directory>
+            </resource>
+            <!--指定sqlex编译源码目录-->
+            <resource>
+                <directory>${basedir}/src/main/sqlex</directory>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>me.danwi.sqlex</groupId>
