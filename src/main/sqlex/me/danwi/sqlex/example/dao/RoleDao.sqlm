@@ -1,4 +1,5 @@
-getAll(name:String) {
+# 模糊查询指定名称角色信息
+findAll(name:String) {
     select *
     from role
     where name like concat('?', :name, '?')

@@ -15,11 +15,11 @@ public class Main {
         UserDao userDao = dataSource.getInstance(UserDao.class);
         RoleDao roleDao = dataSource.getInstance(RoleDao.class);
 
-        userDao.getAll(10, "123", null);
-        userDao.getAll(10, "123", new ArrayList());
-        userDao.getAllByRole("123");
-        userDao.getCountsByRole();
+        userDao.findAll(10, "123", null);
+        userDao.findAll(10, "123", new ArrayList());
+        userDao.findAllByRole("123");
+        userDao.findCountsByRole();
 
-        roleDao.getAll("管");
+        roleDao.findAll("管");
     }
 }
