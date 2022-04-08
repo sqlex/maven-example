@@ -17,7 +17,7 @@
         <dependency>
             <groupId>me.danwi.sqlex</groupId>
             <artifactId>core</artifactId>
-            <version>0.0.3</version>
+            <version>0.0.4</version>
         </dependency>
     </dependencies>
 
@@ -26,11 +26,10 @@
             <plugin>
                 <groupId>me.danwi.sqlex</groupId>
                 <artifactId>sqlex-maven-plugin</artifactId>
-                <version>0.0.3</version>
+                <version>0.0.4</version>
                 <executions>
                     <execution>
                         <goals>
-                            <goal>add-source</goal>
                             <goal>generate</goal>
                         </goals>
                         <configuration>
