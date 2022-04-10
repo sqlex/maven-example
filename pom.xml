@@ -23,10 +23,7 @@
 
     <build>
         <resources>
-            <resource>
-                <directory>${basedir}/src/main/java</directory>
-            </resource>
-            <!--指定sqlex编译源码目录-->
+            <!--指定sqlex为编译资源目录方便idea插件自动识别，无需手动idea设置为源码目录-->
             <resource>
                 <directory>${basedir}/src/main/sqlex</directory>
             </resource>
