@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>me.danwi.sqlex</groupId>
-    <artifactId>example</artifactId>
+    <artifactId>maven-example</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -17,20 +17,25 @@
         <dependency>
             <groupId>me.danwi.sqlex</groupId>
             <artifactId>core</artifactId>
-            <version>0.0.3</version>
+            <version>0.0.4</version>
         </dependency>
     </dependencies>
 
     <build>
+        <resources>
+            <!--指定sqlex为编译资源目录方便idea插件自动识别，无需手动idea设置为源码目录-->
+            <resource>
+                <directory>${basedir}/src/main/sqlex</directory>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>me.danwi.sqlex</groupId>
                 <artifactId>sqlex-maven-plugin</artifactId>
-                <version>0.0.3</version>
+                <version>0.0.4</version>
                 <executions>
                     <execution>
                         <goals>
-                            <goal>add-source</goal>
                             <goal>generate</goal>
                         </goals>
                         <configuration>
