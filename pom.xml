@@ -9,15 +9,20 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>me.danwi.sqlex</groupId>
             <artifactId>core</artifactId>
-            <version>0.0.3</version>
+            <version>0.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.28</version>
         </dependency>
     </dependencies>
 
@@ -26,18 +31,12 @@
             <plugin>
                 <groupId>me.danwi.sqlex</groupId>
                 <artifactId>sqlex-maven-plugin</artifactId>
-                <version>0.0.3</version>
+                <version>0.3.0</version>
                 <executions>
                     <execution>
                         <goals>
-                            <goal>add-source</goal>
                             <goal>generate</goal>
                         </goals>
-                        <configuration>
-                            <sources>
-                                <source>${project.basedir}/src/main/sqlex</source>
-                            </sources>
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>
