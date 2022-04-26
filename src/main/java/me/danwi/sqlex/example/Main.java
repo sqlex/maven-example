@@ -17,11 +17,11 @@ public class Main {
         UserDao userDao = factory.getInstance(UserDao.class);
         RoleDao roleDao = factory.getInstance(RoleDao.class);
 
-        System.out.println(userDao.getAll(10, "123", null));
-        System.out.println(userDao.getAll(10, "123", new ArrayList()));
-        System.out.println(userDao.getAllByRole("123"));
-        System.out.println(userDao.getCountsByRole());
+        System.out.println(userDao.findAll(10, "123", null));
+        System.out.println(userDao.findAll(10, "123", new ArrayList()));
+        System.out.println(userDao.findAllByRole("123"));
+        System.out.println(userDao.findCountsByRole());
 
-        System.out.println(roleDao.getAll("管"));
+        System.out.println(roleDao.findAll("管"));
     }
 }
