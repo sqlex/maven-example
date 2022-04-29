@@ -14,6 +14,11 @@ public class Main {
                 Repository.class
         );
 
+        //数据库结构迁移
+        factory.migrate();
+        //数据库结构检查
+        factory.check();
+
         UserDao userDao = factory.getInstance(UserDao.class);
         RoleDao roleDao = factory.getInstance(RoleDao.class);
 

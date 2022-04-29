@@ -17,12 +17,17 @@
         <dependency>
             <groupId>me.danwi.sqlex</groupId>
             <artifactId>core</artifactId>
-            <version>0.3.0</version>
+            <version>0.5.0</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.28</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.11</version>
         </dependency>
     </dependencies>
 
@@ -31,7 +36,7 @@
             <plugin>
                 <groupId>me.danwi.sqlex</groupId>
                 <artifactId>sqlex-maven-plugin</artifactId>
-                <version>0.3.0</version>
+                <version>0.5.0</version>
                 <executions>
                     <execution>
                         <goals>
