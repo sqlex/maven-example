@@ -27,7 +27,7 @@ public class Main {
         //删除所有用户
         userTable.delete().where(arg(true)).execute();
         //插入用户
-        User user1 = User.from("fake id", "fake name");
+        User user1 = User.forInsert("fake id", "fake name");
         userTable.insertWithoutNull(user1);
         //查找
         User user2 = userTable.findById("fake id");
@@ -57,7 +57,7 @@ public class Main {
         RoleDao roleDao = factory.getInstance(RoleDao.class);
 
         System.out.println(userDao.findAll(10, "123", null));
-        System.out.println(userDao.findAll(10, "123", new ArrayList()));
+        System.out.println(userDao.findAll(10, "123", new ArrayList<>()));
         System.out.println(userDao.findAllByRole("123"));
         System.out.println(userDao.findCountsByRole());
 
