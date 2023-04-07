@@ -27,7 +27,7 @@ public class Main {
         //删除所有用户
         userTable.delete().where(arg(true)).execute();
         //插入用户
-        User user1 = User.forInsert("fake id", "fake name");
+        User user1 = User.builder().setId("fake id").setName("fake name").build();
         userTable.insertWithoutNull(user1);
         //查找
         User user2 = userTable.findById("fake id");
@@ -42,7 +42,7 @@ public class Main {
         User user4 = userTable.findById("fake id");
         assert user4 == null;
         //保存并返回
-        User user5 = userTable.save(User.from("fake id", "fake name"));
+        User user5 = userTable.save(User.builder().setId("fake id").setName("fake name").build());
         assert user5.getCreateAt() != null;
         assert user5.getAge() == null;
         //保存或更新
